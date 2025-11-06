@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import PixelBlast from '@/components/PixelBlast';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import PixelBlast from '../components/PixelBlast';
 
 export const metadata: Metadata = {
   title: 'Jonathan Hsu - Product Designer',
