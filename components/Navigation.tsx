@@ -11,7 +11,7 @@ const Navigation = () => {
   ]
 
   return (
-    <header className="border-b border-gray-700">
+    <header className="sticky top-0 z-20 bg-gray-900/95 border-b border-gray-700">
       <nav className="p-6 flex items-center justify-between font-mono">
         <Link href="/" className="text-white font-medium no-underline hover:underline">
           Jonathan Hsu

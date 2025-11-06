@@ -48,8 +48,9 @@ export default function DataAccessPortal() {
             </div>
           </header>
 
-          {/* Overview */}
+          {/* Content Sections */}
           <div className='space-y-8'>
+            {/* Overview */}
             <section className='space-y-4'>
               <h2 className='text-xl text-gray-400'>Overview</h2>
               <p className='text-gray-300 leading-relaxed'>
@@ -254,20 +255,20 @@ export default function DataAccessPortal() {
 
               <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 <div className='border border-gray-700 p-6'>
-                  <div className='text-4xl font-bold text-green-500'>85%</div>
+                  <div className='text-4xl font-bold text-white'>85%</div>
                   <p className='text-gray-300'>
                     Reduction in security incidents related to password breaches
                   </p>
                 </div>
                 <div className='border border-gray-700 p-6'>
-                  <div className='text-4xl font-bold text-blue-500'>92%</div>
+                  <div className='text-4xl font-bold text-white'>92%</div>
                   <p className='text-gray-300'>
                     User satisfaction with the intuitive interface and ease of
                     access
                   </p>
                 </div>
                 <div className='border border-gray-700 p-6'>
-                  <div className='text-4xl font-bold text-purple-500'>3x</div>
+                  <div className='text-4xl font-bold text-white'>3x</div>
                   <p className='text-gray-300'>
                     Faster database connection setup for enterprise users
                   </p>
