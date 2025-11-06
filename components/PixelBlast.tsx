@@ -31,6 +31,26 @@ type PixelBlastProps = {
   noiseAmount?: number;
 };
 
+const checkWebGL2Support = (): { supported: boolean; reason?: string } => {
+  if (typeof document === 'undefined') {
+    return { supported: false, reason: 'Server-side rendering' };
+  }
+
+  const canvas = document.createElement('canvas');
+  const gl = canvas.getContext('webgl2');
+
+  if (!gl) {
+    // Try to get more specific info
+    const gl1 = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl1) {
+      return { supported: false, reason: 'WebGL not supported or disabled' };
+    }
+    return { supported: false, reason: 'WebGL 2 not supported (device supports WebGL 1 only)' };
+  }
+
+  return { supported: true };
+};
+
 const createTouchTexture = () => {
   const size = 64;
   const canvas = document.createElement('canvas');
@@ -355,6 +375,10 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
   const visibilityRef = useRef({ visible: true });
   const speedRef = useRef(speed);
   const [webglError, setWebglError] = React.useState(false);
+  const contextHandlersRef = useRef<{
+    onContextLost: ((event: Event) => void) | null;
+    onContextRestored: (() => void) | null;
+  }>({ onContextLost: null, onContextRestored: null });
 
   const threeRef = useRef<{
     renderer: THREE.WebGLRenderer;
@@ -415,6 +439,14 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         }
         t.composer?.dispose();
         if (t.renderer && typeof t.renderer.dispose === 'function') {
+          // Remove WebGL context event listeners
+          if (contextHandlersRef.current.onContextLost) {
+            t.renderer.domElement.removeEventListener('webglcontextlost', contextHandlersRef.current.onContextLost as any);
+          }
+          if (contextHandlersRef.current.onContextRestored) {
+            t.renderer.domElement.removeEventListener('webglcontextrestored', contextHandlersRef.current.onContextRestored as any);
+          }
+
           t.renderer.dispose();
           if (t.renderer.domElement?.parentElement === container) {
             container.removeChild(t.renderer.domElement);
@@ -422,6 +454,15 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         }
         threeRef.current = null;
       }
+
+      // Check WebGL 2 support before attempting initialization
+      const webgl2Check = checkWebGL2Support();
+      if (!webgl2Check.supported) {
+        console.warn('PixelBlast: Cannot initialize.', webgl2Check.reason);
+        setWebglError(true);
+        return;
+      }
+
       const canvas = document.createElement('canvas');
       let renderer: THREE.WebGLRenderer;
       try {
@@ -439,7 +480,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
           throw new Error('WebGL context could not be created');
         }
       } catch (error) {
-        console.error('Failed to initialize WebGL:', error);
+        console.error('PixelBlast: Failed to initialize WebGL renderer:', error);
         setWebglError(true);
         return;
       }
@@ -543,6 +584,27 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         composer.addPass(noisePass);
       }
       if (composer) composer.setSize(renderer.domElement.width, renderer.domElement.height);
+
+      // Handle WebGL context loss/restore
+      const onContextLost = (event: Event) => {
+        event.preventDefault();
+        console.warn('PixelBlast: WebGL context lost. Animation paused.');
+        if (threeRef.current?.raf) {
+          cancelAnimationFrame(threeRef.current.raf);
+        }
+      };
+
+      const onContextRestored = () => {
+        console.log('PixelBlast: WebGL context restored. Attempting to resume...');
+        // Context restoration is complex with three.js, safer to show fallback
+        setWebglError(true);
+      };
+
+      contextHandlersRef.current = { onContextLost, onContextRestored };
+
+      renderer.domElement.addEventListener('webglcontextlost', onContextLost, false);
+      renderer.domElement.addEventListener('webglcontextrestored', onContextRestored, false);
+
       const mapToPixels = (e: PointerEvent) => {
         const rect = renderer.domElement.getBoundingClientRect();
         const scaleX = renderer.domElement.width / rect.width;
@@ -649,6 +711,14 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       }
       t.composer?.dispose();
       if (t.renderer && typeof t.renderer.dispose === 'function') {
+        // Remove WebGL context event listeners
+        if (contextHandlersRef.current.onContextLost) {
+          t.renderer.domElement.removeEventListener('webglcontextlost', contextHandlersRef.current.onContextLost as any);
+        }
+        if (contextHandlersRef.current.onContextRestored) {
+          t.renderer.domElement.removeEventListener('webglcontextrestored', contextHandlersRef.current.onContextRestored as any);
+        }
+
         t.renderer.dispose();
         if (t.renderer.domElement?.parentElement === container) {
           container.removeChild(t.renderer.domElement);
@@ -685,6 +755,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         className={`w-full h-full relative overflow-hidden ${className ?? ''}`}
         style={style}
         aria-label="Background pattern"
+        title="WebGL animation unavailable - check browser console for details"
       >
         <div className="w-full h-full bg-gray-900" />
       </div>
