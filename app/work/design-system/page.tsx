@@ -7,7 +7,7 @@ export default function DesignSystem() {
             <h2 className='text-xl font-semibold text-white mb-2'>
               Cyral Design Style Guide
             </h2>
-            <div className='flex gap-4 text-sm text-gray-400 font-mono'>
+            <div className='flex gap-4 text-sm text-gray-400'>
               <span>Lead Product Designer</span>
               <span>•</span>
               <span>2021-2024</span>

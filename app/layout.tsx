@@ -41,7 +41,7 @@ export default function RootLayout({
             transparent
           />
         </div>
-        <div className='container-narrow content-box border-t-0 border-b-0 h-screen flex flex-col relative z-10 bg-gray-900/95'>
+        <div className='container-narrow content-box border-t-0 border-b-0 min-h-screen flex flex-col relative z-10 bg-gray-900/95'>
           <Navigation />
           <main className='flex-1 flex flex-col'>{children}</main>
           <Footer />
