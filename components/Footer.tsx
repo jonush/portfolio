@@ -16,7 +16,7 @@ const Footer = () => {
             [LinkedIn]
           </Link>
           <Link
-            href="https://github.com/jonathanhsu"
+            href="https://github.com/jonush"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white no-underline hover:underline"
