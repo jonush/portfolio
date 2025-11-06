@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="p-6 text-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
           <Link
-            href="https://linkedin.com/in/jonathanhsu"
+            href="https://www.linkedin.com/in/jon-hsu/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white no-underline hover:underline"
