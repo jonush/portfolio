@@ -354,6 +354,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const visibilityRef = useRef({ visible: true });
   const speedRef = useRef(speed);
+  const [webglError, setWebglError] = React.useState(false);
 
   const threeRef = useRef<{
     renderer: THREE.WebGLRenderer;
@@ -407,21 +408,42 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       if (threeRef.current) {
         const t = threeRef.current;
         t.resizeObserver?.disconnect();
-        cancelAnimationFrame(t.raf!);
-        t.quad?.geometry.dispose();
-        t.material.dispose();
+        if (t.raf) cancelAnimationFrame(t.raf);
+        t.quad?.geometry?.dispose();
+        if (t.material && typeof t.material.dispose === 'function') {
+          t.material.dispose();
+        }
         t.composer?.dispose();
-        t.renderer.dispose();
-        if (t.renderer.domElement.parentElement === container) container.removeChild(t.renderer.domElement);
+        if (t.renderer && typeof t.renderer.dispose === 'function') {
+          t.renderer.dispose();
+          if (t.renderer.domElement?.parentElement === container) {
+            container.removeChild(t.renderer.domElement);
+          }
+        }
         threeRef.current = null;
       }
       const canvas = document.createElement('canvas');
-      const renderer = new THREE.WebGLRenderer({
-        canvas,
-        antialias,
-        alpha: true,
-        powerPreference: 'high-performance'
-      });
+      let renderer: THREE.WebGLRenderer;
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas,
+          antialias,
+          alpha: true,
+          powerPreference: 'high-performance',
+          failIfMajorPerformanceCaveat: false
+        });
+
+        // Check if WebGL context was actually created
+        const gl = renderer.getContext();
+        if (!gl) {
+          throw new Error('WebGL context could not be created');
+        }
+      } catch (error) {
+        console.error('Failed to initialize WebGL:', error);
+        setWebglError(true);
+        return;
+      }
+
       renderer.domElement.style.width = '100%';
       renderer.domElement.style.height = '100%';
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -620,12 +642,18 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       if (!threeRef.current) return;
       const t = threeRef.current;
       t.resizeObserver?.disconnect();
-      cancelAnimationFrame(t.raf!);
-      t.quad?.geometry.dispose();
-      t.material.dispose();
+      if (t.raf) cancelAnimationFrame(t.raf);
+      t.quad?.geometry?.dispose();
+      if (t.material && typeof t.material.dispose === 'function') {
+        t.material.dispose();
+      }
       t.composer?.dispose();
-      t.renderer.dispose();
-      if (t.renderer.domElement.parentElement === container) container.removeChild(t.renderer.domElement);
+      if (t.renderer && typeof t.renderer.dispose === 'function') {
+        t.renderer.dispose();
+        if (t.renderer.domElement?.parentElement === container) {
+          container.removeChild(t.renderer.domElement);
+        }
+      }
       threeRef.current = null;
     };
   }, [
@@ -650,6 +678,18 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     color,
     speed
   ]);
+
+  if (webglError) {
+    return (
+      <div
+        className={`w-full h-full relative overflow-hidden ${className ?? ''}`}
+        style={style}
+        aria-label="Background pattern"
+      >
+        <div className="w-full h-full bg-gray-900" />
+      </div>
+    );
+  }
 
   return (
     <div
