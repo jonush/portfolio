@@ -29,6 +29,14 @@ const Footer = () => {
           >
             [Email]
           </Link>
+          <Link
+            href="/jonathan_hsu_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white no-underline hover:underline"
+          >
+            [Resume]
+          </Link>
         </div>
         <p className="text-gray-400">© {currentYear}</p>
       </div>
