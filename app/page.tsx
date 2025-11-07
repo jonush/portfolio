@@ -16,8 +16,10 @@ export default function Home() {
 
             <p>
               I enjoy building design systems, solving complex UX challenges,
-              and finding the balance between user needs and business goals.
+              and exploring nonstandard user interface patterns.
             </p>
+
+            <p>Currently looking for my next role :)</p>
           </div>
         </div>
       </section>
