@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -38,7 +39,10 @@ const Footer = () => {
             [Resume]
           </Link>
         </div>
-        <p className="text-gray-600 dark:text-gray-400">© {currentYear}</p>
+        <div className="flex items-center gap-4">
+          <p className="text-gray-600 dark:text-gray-400">© {currentYear}</p>
+          <ThemeToggle />
+        </div>
       </div>
     </footer>
   )
