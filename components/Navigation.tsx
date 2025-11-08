@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeToggle from './ThemeToggle'
 
 const Navigation = () => {
   const pathname = usePathname()
@@ -16,18 +17,21 @@ const Navigation = () => {
         <Link href="/" className="text-gray-900 dark:text-white font-medium no-underline hover:underline">
           Jonathan Hsu
         </Link>
-        <ul className="flex items-center gap-4">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="text-gray-900 dark:text-white no-underline hover:underline"
-              >
-                [{item.label}]
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-4">
+          <ul className="flex items-center gap-4">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-gray-900 dark:text-white no-underline hover:underline"
+                >
+                  [{item.label}]
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
       </nav>
     </header>
   )
