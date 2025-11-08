@@ -11,9 +11,9 @@ const Navigation = () => {
   ]
 
   return (
-    <header className="sticky top-0 z-20 bg-gray-900/95 border-b border-gray-700">
+    <header className="sticky top-0 z-20 bg-white/95 dark:bg-gray-900/95 border-b border-gray-300 dark:border-gray-700">
       <nav className="p-6 flex items-center justify-between font-mono">
-        <Link href="/" className="text-white font-medium no-underline hover:underline">
+        <Link href="/" className="text-gray-900 dark:text-white font-medium no-underline hover:underline">
           Jonathan Hsu
         </Link>
         <ul className="flex items-center gap-4">
@@ -21,7 +21,7 @@ const Navigation = () => {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-white no-underline hover:underline"
+                className="text-gray-900 dark:text-white no-underline hover:underline"
               >
                 [{item.label}]
               </Link>

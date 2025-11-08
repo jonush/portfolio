@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { EffectComposer, EffectPass, RenderPass, Effect } from 'postprocessing';
+import { useTheme } from 'next-themes';
 
 type PixelBlastVariant = 'square' | 'circle' | 'triangle' | 'diamond';
 
@@ -371,6 +372,10 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
   edgeFade = 0.5,
   noiseAmount = 0
 }) => {
+  const { theme, systemTheme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const themeColor = currentTheme === 'dark' ? color : '#d4d4d4';
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const visibilityRef = useRef({ visible: true });
   const speedRef = useRef(speed);
@@ -494,7 +499,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       const uniforms = {
         uResolution: { value: new THREE.Vector2(0, 0) },
         uTime: { value: 0 },
-        uColor: { value: new THREE.Color(color) },
+        uColor: { value: new THREE.Color(themeColor) },
         uClickPos: {
           value: Array.from({ length: MAX_CLICKS }, () => new THREE.Vector2(-1, -1))
         },
@@ -679,7 +684,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       const t = threeRef.current!;
       t.uniforms.uShapeType.value = SHAPE_MAP[variant] ?? 0;
       t.uniforms.uPixelSize.value = pixelSize * t.renderer.getPixelRatio();
-      t.uniforms.uColor.value.set(color);
+      t.uniforms.uColor.value.set(themeColor);
       t.uniforms.uScale.value = patternScale;
       t.uniforms.uDensity.value = patternDensity;
       t.uniforms.uPixelJitter.value = pixelSizeJitter;
@@ -745,7 +750,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     liquidWobbleSpeed,
     autoPauseOffscreen,
     variant,
-    color,
+    themeColor,
     speed
   ]);
 
@@ -757,7 +762,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         aria-label="Background pattern"
         title="WebGL animation unavailable - check browser console for details"
       >
-        <div className="w-full h-full bg-gray-900" />
+        <div className="w-full h-full bg-white dark:bg-gray-900" />
       </div>
     );
   }

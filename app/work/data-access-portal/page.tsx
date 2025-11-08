@@ -7,17 +7,17 @@ export default function DataAccessPortal() {
         <div className='p-6 space-y-6'>
           <header className='space-y-4'>
             <div>
-              <h1 className='text-2xl font-semibold text-white'>
+              <h1 className='text-2xl font-semibold text-gray-900 dark:text-white'>
                 Cyral Data Access Portal
               </h1>
-              <p className='text-lg text-gray-300'>
+              <p className='text-lg text-gray-700 dark:text-gray-300'>
                 Streamlining and securing database access for enterprise
                 security
               </p>
             </div>
 
             {/* Cover Image */}
-            <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+            <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
               <Image
                 src='/cyral-logo.png'
                 alt='Cyral Data Access Portal'
@@ -30,17 +30,17 @@ export default function DataAccessPortal() {
             {/* Project Details */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 text-sm'>
               <div>
-                <span className='text-gray-400 block mb-2'>Duration</span>
-                <span className='text-gray-300'>3 months</span>
+                <span className='text-gray-600 dark:text-gray-400 block mb-2'>Duration</span>
+                <span className='text-gray-700 dark:text-gray-300'>3 months</span>
               </div>
               <div>
-                <span className='text-gray-400 block mb-2'>Platform</span>
-                <span className='text-gray-300'>Web Application</span>
+                <span className='text-gray-600 dark:text-gray-400 block mb-2'>Platform</span>
+                <span className='text-gray-700 dark:text-gray-300'>Web Application</span>
               </div>
 
               <div>
-                <span className='text-gray-400 block text-sm mb-2'>Team</span>
-                <p className='text-gray-300 text-sm'>
+                <span className='text-gray-600 dark:text-gray-400 block text-sm mb-2'>Team</span>
+                <p className='text-gray-700 dark:text-gray-300 text-sm'>
                   Lead Designer (me), Head of Engineering, Chief Software
                   Architect, 2 Front-end Developers, Product Manager
                 </p>
@@ -52,8 +52,8 @@ export default function DataAccessPortal() {
           <div className='space-y-8'>
             {/* Overview */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Overview</h2>
-              <p className='text-gray-300 leading-relaxed'>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Overview</h2>
+              <p className='text-gray-700 dark:text-gray-300 leading-relaxed'>
                 Database security breaches cost organizations an average of
                 $4.35M per incident. Our enterprise customers (Informatica,
                 Verisk, Vanguard) were struggling with password management
@@ -64,8 +64,8 @@ export default function DataAccessPortal() {
                 maintains enterprise security while dramatically improving user
                 experience?
               </p>
-              <p className='text-gray-300 leading-relaxed'>
-                <span className='text-white font-medium'>My Role:</span> I led
+              <p className='text-gray-700 dark:text-gray-300 leading-relaxed'>
+                <span className='text-gray-900 dark:text-white font-medium'>My Role:</span> I led
                 the entire design process, from user research to final
                 implementation, working as the primary design voice on a
                 cross-functional team.
@@ -74,21 +74,21 @@ export default function DataAccessPortal() {
 
             {/* Challenges */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Challenges</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Challenges</h2>
               <ul className='space-y-4'>
                 <li>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     1. Security Vulnerabilities
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Organizations struggled with password-based database access,
                     leading to security incidents and compliance challenges in
                     enterprise environments.
                   </p>
                 </li>
                 <li>
-                  <h3 className='text-white font-medium'>2. User Friction</h3>
-                  <p className='text-gray-300'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>2. User Friction</h3>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Users had to manage multiple passwords and complex
                     connection strings, with 65% reporting that existing
                     database access methods were cumbersome and time-consuming.
@@ -99,10 +99,10 @@ export default function DataAccessPortal() {
 
             {/* Research */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Research & Approach</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Research & Approach</h2>
               <div className='space-y-6'>
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     User Research Approach:
                   </span>{' '}
                   I conducted 15+ customer interviews across enterprise and SMB
@@ -112,8 +112,8 @@ export default function DataAccessPortal() {
                   workflows.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Cross-functional Collaboration:
                   </span>{' '}
                   Rather than working in isolation, I embedded myself with
@@ -125,8 +125,8 @@ export default function DataAccessPortal() {
                   together.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Design Standards:
                   </span>{' '}
                   I established design guidelines specifically for this project,
@@ -135,8 +135,8 @@ export default function DataAccessPortal() {
                   Cyral&apos;s product suite.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Stakeholder Management:
                   </span>{' '}
                   I presented design decisions to executives using business
@@ -149,14 +149,14 @@ export default function DataAccessPortal() {
 
             {/* Solutions */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Solutions</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Solutions</h2>
               <div className='space-y-4'>
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Centralized Access Management
                   </h3>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     A unified interface for managing database connections that
                     simplifies how users search for repositories, manage access
                     tokens, and request access. The portal provides paginated
@@ -166,7 +166,7 @@ export default function DataAccessPortal() {
                   </p>
 
                   {/* Image */}
-                  <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+                  <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
                     <Image
                       src='/data-access-portal.png'
                       alt='Centralized Access Management'
@@ -176,7 +176,7 @@ export default function DataAccessPortal() {
                     />
                   </div>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     I chose a card-based layout over traditional tables after
                     observing users needed to quickly scan database types,
                     access levels, and security restrictions simultaneously.
@@ -184,11 +184,11 @@ export default function DataAccessPortal() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Password-less Authentication
                   </h3>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Implemented token-based authentication that eliminates the
                     need for passwords, enhancing security and simplifying the
                     connection process. Users primarily utilize connection
@@ -198,7 +198,7 @@ export default function DataAccessPortal() {
                   </p>
 
                   {/* Image */}
-                  <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+                  <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
                     <Image
                       src='/data-access-portal-details.png'
                       alt='Password-less Authentication'
@@ -208,7 +208,7 @@ export default function DataAccessPortal() {
                     />
                   </div>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Working closely with our Chief Software Architect, I
                     designed the authentication flow to integrate seamlessly
                     with existing identity providers while maintaining a simple
@@ -217,11 +217,11 @@ export default function DataAccessPortal() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Enhanced Security Integration
                   </h3>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     The portal displays security restrictions (e.g., access only
                     when on-call) and integrates with SSO and MFA systems. Users
                     can authenticate using identity providers when necessary,
@@ -229,7 +229,7 @@ export default function DataAccessPortal() {
                   </p>
 
                   {/* Image */}
-                  <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+                  <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
                     <Image
                       src='/data-access-portal-duo-mfa.png'
                       alt='Enhanced Security Integration'
@@ -239,7 +239,7 @@ export default function DataAccessPortal() {
                     />
                   </div>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     I developed an unexpected solution for security policy
                     visualization—using color-coded indicators and progressive
                     disclosure to show complex access rules without overwhelming
@@ -251,31 +251,31 @@ export default function DataAccessPortal() {
 
             {/* Results */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Results</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Results</h2>
 
               <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                <div className='border border-gray-700 p-6'>
-                  <div className='text-4xl font-bold text-white'>85%</div>
-                  <p className='text-gray-300'>
+                <div className='border border-gray-300 dark:border-gray-700 p-6'>
+                  <div className='text-4xl font-bold text-gray-900 dark:text-white'>85%</div>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Reduction in security incidents related to password breaches
                   </p>
                 </div>
-                <div className='border border-gray-700 p-6'>
-                  <div className='text-4xl font-bold text-white'>92%</div>
-                  <p className='text-gray-300'>
+                <div className='border border-gray-300 dark:border-gray-700 p-6'>
+                  <div className='text-4xl font-bold text-gray-900 dark:text-white'>92%</div>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     User satisfaction with the intuitive interface and ease of
                     access
                   </p>
                 </div>
-                <div className='border border-gray-700 p-6'>
-                  <div className='text-4xl font-bold text-white'>3x</div>
-                  <p className='text-gray-300'>
+                <div className='border border-gray-300 dark:border-gray-700 p-6'>
+                  <div className='text-4xl font-bold text-gray-900 dark:text-white'>3x</div>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Faster database connection setup for enterprise users
                   </p>
                 </div>
               </div>
 
-              <p className='text-gray-300 leading-relaxed'>
+              <p className='text-gray-700 dark:text-gray-300 leading-relaxed'>
                 The Data Access Portal became Cyral&apos;s most adopted feature,
                 with later expansion to S3 buckets becoming one of our most
                 popular offerings. This work directly contributed to

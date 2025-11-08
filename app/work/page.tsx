@@ -20,9 +20,9 @@ export default function Work() {
     <>
       <section>
         <div className='p-6 space-y-6'>
-          <h2 className='text-xl font-mono text-gray-400'>Work</h2>
+          <h2 className='text-xl font-mono text-gray-600 dark:text-gray-400'>Work</h2>
 
-          <p className='text-gray-300'>
+          <p className='text-gray-700 dark:text-gray-300'>
             During my time as Cyral&apos;s first design hire, these projects
             shaped both the product&apos;s evolution and my growth as a designer
             navigating the unique challenges of enterprise security.
@@ -32,11 +32,11 @@ export default function Work() {
             {projects.map((project) => (
               <article
                 key={project.slug}
-                className='border border-gray-700 p-6'
+                className='border border-gray-300 dark:border-gray-700 p-6'
               >
-                <h3 className='font-medium text-white mb-3'>{project.title}</h3>
-                <p className='text-gray-300 mb-4'>{project.description}</p>
-                <Link href={`/work/${project.slug}`} className='text-white'>
+                <h3 className='font-medium text-gray-900 dark:text-white mb-3'>{project.title}</h3>
+                <p className='text-gray-700 dark:text-gray-300 mb-4'>{project.description}</p>
+                <Link href={`/work/${project.slug}`}>
                   View →
                 </Link>
               </article>

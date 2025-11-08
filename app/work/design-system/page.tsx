@@ -7,16 +7,16 @@ export default function DesignSystem() {
         <div className='p-6 space-y-6'>
           <header className='space-y-4'>
             <div>
-              <h1 className='text-2xl font-semibold text-white'>
+              <h1 className='text-2xl font-semibold text-gray-900 dark:text-white'>
                 Cyral Design Style Guide
               </h1>
-              <p className='text-lg text-gray-300'>
+              <p className='text-lg text-gray-700 dark:text-gray-300'>
                 Establishing design consistency across Material UI components
               </p>
             </div>
 
             {/* Cover Image */}
-            <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+            <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
               <Image
                 src='/cyral_style_guide.png'
                 alt='Cyral Design Style Guide'
@@ -29,19 +29,19 @@ export default function DesignSystem() {
             {/* Project Details */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 text-sm'>
               <div>
-                <span className='text-gray-400 block mb-2'>Duration</span>
-                <span className='text-gray-300'>4 months</span>
+                <span className='text-gray-600 dark:text-gray-400 block mb-2'>Duration</span>
+                <span className='text-gray-700 dark:text-gray-300'>4 months</span>
               </div>
               <div>
-                <span className='text-gray-400 block mb-2'>Platform</span>
-                <span className='text-gray-300'>
+                <span className='text-gray-600 dark:text-gray-400 block mb-2'>Platform</span>
+                <span className='text-gray-700 dark:text-gray-300'>
                   Web Application & Design Tools
                 </span>
               </div>
 
               <div>
-                <span className='text-gray-400 block text-sm mb-2'>Team</span>
-                <p className='text-gray-300 text-sm'>
+                <span className='text-gray-600 dark:text-gray-400 block text-sm mb-2'>Team</span>
+                <p className='text-gray-700 dark:text-gray-300 text-sm'>
                   Lead Designer (me), 2 Front-end Engineers, VP of Engineering
                 </p>
               </div>
@@ -52,8 +52,8 @@ export default function DesignSystem() {
           <div className='space-y-8'>
             {/* The Challenge */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>The Challenge</h2>
-              <p className='text-gray-300 leading-relaxed'>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>The Challenge</h2>
+              <p className='text-gray-700 dark:text-gray-300 leading-relaxed'>
                 During my time intially contracting for Cyral, I found
                 typography font choices and text sizing varied throughout the
                 product. Color usage beyond the primary blue was inconsistent,
@@ -69,10 +69,10 @@ export default function DesignSystem() {
 
               <ul className='space-y-4'>
                 <li>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     1. Engineering Impact
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     The front-end team was spending considerable time converting
                     low-fidelity wireframes from Google Slides into usable
                     experiences. In the fast-paced startup environment,
@@ -85,10 +85,10 @@ export default function DesignSystem() {
                   </p>
                 </li>
                 <li>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     2. Onboarding Friction
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     New team members faced an intimidating and overwhelming
                     experience with no visual design guidelines. One front-end
                     engineer hired before the style guide struggled
@@ -103,15 +103,15 @@ export default function DesignSystem() {
 
             {/* My Approach */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>My Approach</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>My Approach</h2>
 
               <div className='space-y-4'>
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Strategic Prioritization
                   </h3>
 
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Rather than stopping feature development for systematic
                     cleanup, I implemented a pragmatic approach: defining
                     critical styles (spacing, typography, buttons, inputs) and
@@ -123,7 +123,7 @@ export default function DesignSystem() {
                   </p>
 
                   {/* Image */}
-                  <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+                  <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
                     <Image
                       src='/style_guide_styles.png'
                       alt='Style Guide Styles'
@@ -135,10 +135,10 @@ export default function DesignSystem() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Foundation-First Development
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     I established foundational styles and high-use components
                     (buttons, tables, iconography from Material UI, cards) as
                     the initial framework. Working closely with the VP of
@@ -152,10 +152,10 @@ export default function DesignSystem() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Material UI Decisions
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Given reign over visual direction, I made strategic
                     decisions about customizing Material UI components while
                     balancing Cyral&apos;s enterprise security brand identity
@@ -174,10 +174,10 @@ export default function DesignSystem() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Documentation & Organization
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     I structured the complete style guide in Figma with
                     individual pages for different categories (typography,
                     shadows, colors, border styles, components, icons) plus a
@@ -190,7 +190,7 @@ export default function DesignSystem() {
                   </p>
 
                   {/* Image */}
-                  <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+                  <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
                     <Image
                       src='/style_guide_changelog.png'
                       alt='Style Guide Changelog'
@@ -202,10 +202,10 @@ export default function DesignSystem() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-white font-medium'>
+                  <h3 className='text-gray-900 dark:text-white font-medium'>
                     Technical Collaboration
                   </h3>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-700 dark:text-gray-300'>
                     Close collaboration with engineering leads involved
                     converting design decisions into developer-friendly formats
                     (rem values, hex codes, pixel ranges) and walking through
@@ -220,10 +220,10 @@ export default function DesignSystem() {
 
             {/* Impact */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Impact</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Impact</h2>
 
               {/* Image */}
-              <div className='border border-gray-700 bg-gray-800/50 overflow-hidden'>
+              <div className='border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50 overflow-hidden'>
                 <Image
                   src='/old_vs_new.png'
                   alt='Old vs New Comparison'
@@ -234,8 +234,8 @@ export default function DesignSystem() {
               </div>
 
               <div className='space-y-6'>
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Measurable Improvements:
                   </span>{' '}
                   While lacking formal quantitative metrics, the engineering
@@ -248,8 +248,8 @@ export default function DesignSystem() {
                   between design and engineering.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     System Maturity & Sustainability:
                   </span>{' '}
                   The style guide evolved significantly during my tenure, with
@@ -262,8 +262,8 @@ export default function DesignSystem() {
                   designer-dependent processes.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Onboarding Impact:
                   </span>{' '}
                   The contrast between pre- and post-style guide developer
@@ -273,8 +273,8 @@ export default function DesignSystem() {
                   onboarding experience much smoother and less intimidating.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Long-term Evolution:
                   </span>{' '}
                   Eventually, we reached a steady state where the development
@@ -289,10 +289,10 @@ export default function DesignSystem() {
 
             {/* Key Takeaways */}
             <section className='space-y-4'>
-              <h2 className='text-xl text-gray-400'>Key Takeaways</h2>
+              <h2 className='text-xl text-gray-600 dark:text-gray-400'>Key Takeaways</h2>
               <div className='space-y-6'>
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Strategic Foundation Building:
                   </span>{' '}
                   Learning to balance immediate feature needs with long-term
@@ -301,8 +301,8 @@ export default function DesignSystem() {
                   pragmatic implementation paths.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Cross-functional Collaboration:
                   </span>{' '}
                   Building consensus between design standards and engineering
@@ -311,8 +311,8 @@ export default function DesignSystem() {
                   decisions into formats engineers could easily implement.
                 </p>
 
-                <p className='text-gray-300'>
-                  <span className='text-white font-medium'>
+                <p className='text-gray-700 dark:text-gray-300'>
+                  <span className='text-gray-900 dark:text-white font-medium'>
                     Pragmatic Implementation:
                   </span>{' '}
                   Working within startup constraints showed me how to create
